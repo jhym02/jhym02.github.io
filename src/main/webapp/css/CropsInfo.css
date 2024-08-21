@@ -1,0 +1,65 @@
+@charset "UTF-8";
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	margin-top: 50px;
+	background-color: white;
+}
+
+.rounded-rectangle {
+	background-color: #eeeeee;
+	border-radius: 50px;
+	width: 90%;
+	max-width: 1200px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.text {
+	color: #0f430f;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.horizontal-layout {
+	display: flex;
+	align-items: flex-start; /* 수평 정렬 (상단 맞춤) */
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.horizontal-layout img {
+	margin-right: 30px; /* 이미지와 텍스트 사이 간격 */
+	width: 400px; /* 이미지의 너비 설정 */
+	height: 250px; /* 이미지의 높이를 자동으로 설정하여 비율 유지 */
+}
+
+.info {
+	font-size: 21px;
+}
+
+img {
+	margin-bottom: 30px;
+}
+
+button {
+	background-color: #009000;
+	color: white;
+	border: none;
+	padding: 10px 40px;
+	margin-bottom: 50px;
+	font-size: 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #0d730d;
+}

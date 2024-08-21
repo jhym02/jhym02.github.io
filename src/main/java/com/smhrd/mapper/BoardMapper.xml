@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.mapper.BoardMapper">
+
+   
+   <insert id="writeBoard" parameterType="BoardVO">
+    insert into estimate_requests values (seq_est_idx.nextval, #{est_title}, seq_est_no.nextval, #{mem_id}, #{est_content}, #{est_amount}, sysdate, #{est_file}, #{est_auth}, #{est_status})
+</insert>
+
+
+   <select id="allBoard" resultType="BoardVO">
+      select * from estimate_requests order by est_idx desc
+   </select>
+   
+   <select id="detailBoard" resultType="BoardVO">
+      
+      select * from estimate_requests where est_idx=#{est_idx}
+   
+   </select>
+   
+   <delete id="deleteBoard" parameterType="int">
+    DELETE FROM estimate_requests WHERE est_idx = #{est_idx}
+</delete>
+
+</mapper>

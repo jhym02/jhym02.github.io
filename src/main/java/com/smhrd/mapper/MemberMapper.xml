@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="com.smhrd.mapper.MemberMapper">
+  	<!-- #{필드명} -->
+  	
+  	<!-- 회원가입 -->
+  	<insert id="join" parameterType="MemberDTO">
+  		insert into members values(#{mem_id},#{mem_pw},#{mem_name},#{mem_phone},#{mem_addr},#{mem_nick},#{mem_birthdate},#{mem_gender},#{mem_type})
+  	
+  	</insert>
+  	
+  	<!-- 아이디 중복체크 -->
+  	<resultMap id="idCheckResultMap" type="String">
+    <id property="mem_id" column="mem_id"/>
+	</resultMap>
+  	<select id="idCheck" parameterType="String" resultMap="idCheckResultMap">
+    select mem_id from members where mem_id = #{mem_id}
+	</select>
+  
+  <!-- 로그인 -->
+  <select id="login" parameterType="MemberDTO" resultType="MemberDTO">
+		select * from members where mem_id=#{mem_id} and mem_pw=#{mem_pw}
+	</select>
+	
+	<!-- 회원정보수정 -->
+	<update id="update">
+		update members set mem_pw=#{mem_pw},mem_phone=#{mem_phone},mem_addr=#{mem_addr},mem_name=#{mem_name},mem_nick=#{mem_nick},mem_type=#{mem_type} where mem_id=#{mem_id}
+	</update>
+	
+	<!-- 귀농지원기관 -->
+	<select id="selectOrgs" resultType="OrgsDTO">
+		select org_name,org_sigun,org_addr,org_tel from orgs
+	</select>
+	
+	
+  	<!-- 회원삭제 -->
+  	<delete id="delete" parameterType="String">
+  		delete from members where mem_id=#{mem_id}
+  	</delete>
+  	
+  	<!-- 전라남도 작물정보 -->
+   <select id="selectCrops" resultType="CropsDTO">
+      select * from crops
+   </select>
+
+
+  </mapper>
+  
+  
+  
+  
+  

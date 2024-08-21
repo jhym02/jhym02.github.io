@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	font-size: 45px;
+	font-weight: bold;
+	background: linear-gradient(to right top, green, yellow);
+	color: transparent;
+	-webkit-background-clip: text;
+	margin-left: 90px;
+	margin-bottom: 15px;
+}
+
+.logo-image {
+    width: 55px; 
+    height: 55px;
+}
+
+.top-right {
+	position: absolute;
+	top: 50px;
+	right: 120px;
+}
+
+.top-right a {
+	font-size: 30px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.home {
+	width: 40px;
+	height: auto;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 가운데 정렬 */
+    gap: 20px; /* 항목 간의 간격 */
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+   	overflow: hidden;
+    width: calc(20% - 20px); /* 5개씩 배치하기 위한 너비 조정 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;    
+}
+
+.info {
+    padding: 15px;
+}
+
+.info h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+
+button {
+    padding: 10px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
